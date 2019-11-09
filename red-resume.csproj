@@ -10,9 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Views\Movies\Index.cshtml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="wwwroot\css\bulma.min.css">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -22,6 +19,10 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
