@@ -22,8 +22,12 @@ namespace red_resume.Controllers
         // GET: Tasks
         public async Task<IActionResult> Index()
         {
+<<<<<<< HEAD
             var dBContext = _context.Task.Include(t => t.UserDepMap);
             return View(await dBContext.ToListAsync());
+=======
+            return View(await _context.Task.ToListAsync());
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         }
 
         // GET: Tasks/Details/5
@@ -35,7 +39,10 @@ namespace red_resume.Controllers
             }
 
             var task = await _context.Task
+<<<<<<< HEAD
                 .Include(t => t.UserDepMap)
+=======
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (task == null)
             {
@@ -48,7 +55,10 @@ namespace red_resume.Controllers
         // GET: Tasks/Create
         public IActionResult Create()
         {
+<<<<<<< HEAD
             ViewData["UserDepMapId"] = new SelectList(_context.UserDepMap, "Id", "Id");
+=======
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View();
         }
 
@@ -57,7 +67,11 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+<<<<<<< HEAD
         public async Task<IActionResult> Create([Bind("Id,Name,Description,UserDepMapId")] red_resume.Models.Task.Task task)
+=======
+        public async Task<IActionResult> Create([Bind("Id,Name,Description")] red_resume.Models.Task.Task task)
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +79,10 @@ namespace red_resume.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+<<<<<<< HEAD
             ViewData["UserDepMapId"] = new SelectList(_context.UserDepMap, "Id", "Name", task.Name);
+=======
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(task);
         }
 
@@ -82,7 +99,10 @@ namespace red_resume.Controllers
             {
                 return NotFound();
             }
+<<<<<<< HEAD
             ViewData["UserDepMapId"] = new SelectList(_context.UserDepMap, "Id", "Id", task.UserDepMapId);
+=======
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(task);
         }
 
@@ -91,7 +111,11 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+<<<<<<< HEAD
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,UserDepMapId")] red_resume.Models.Task.Task task)
+=======
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] red_resume.Models.Task.Task task)
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         {
             if (id != task.Id)
             {
@@ -118,7 +142,10 @@ namespace red_resume.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+<<<<<<< HEAD
             ViewData["UserDepMapId"] = new SelectList(_context.UserDepMap, "Id", "Id", task.UserDepMapId);
+=======
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(task);
         }
 
@@ -131,7 +158,10 @@ namespace red_resume.Controllers
             }
 
             var task = await _context.Task
+<<<<<<< HEAD
                 .Include(t => t.UserDepMap)
+=======
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (task == null)
             {

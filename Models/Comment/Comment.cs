@@ -16,8 +16,13 @@ namespace red_resume.Models.Comment
         public string Name { get; set; }
 
 
+<<<<<<< HEAD
         [Display(Name = "TaskId")]
         public int TaskId { get; set; }
         public Task.Task Task { get; set; }
+=======
+        [Display(Name = "Task")]
+        public List<Task.Task> Task { get; set; }
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
     }
 }

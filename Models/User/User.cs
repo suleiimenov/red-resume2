@@ -12,7 +12,10 @@ namespace red_resume.Models.User
         [Display(Name = "Id")]
         public int Id { get; set; }
 
+<<<<<<< HEAD
         [Required]
+=======
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         [Display(Name = "Name")]
         public string Name { get; set; }
         

@@ -18,6 +18,10 @@ namespace red_resume.Models.Department
 
 
         [Display(Name = "Organization")]
+<<<<<<< HEAD
         public Organization.Organization Organization { get; set; }
+=======
+        public List<Organization.Organization> Organization { get; set; }
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
     }
 }

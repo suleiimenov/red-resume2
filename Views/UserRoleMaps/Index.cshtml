@@ -12,12 +12,15 @@
 <table class="table">
     <thead>
         <tr>
+<<<<<<< HEAD
             <th>
                 @Html.DisplayNameFor(model => model.User)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Role)
             </th>
+=======
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             <th></th>
         </tr>
     </thead>
@@ -25,12 +28,15 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+<<<<<<< HEAD
                 @Html.DisplayFor(modelItem => item.User.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Role.Name)
             </td>
             <td>
+=======
+>>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
