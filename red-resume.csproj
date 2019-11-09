@@ -10,9 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Views\Movies\Index.cshtml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="wwwroot\css\bulma.min.css">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
