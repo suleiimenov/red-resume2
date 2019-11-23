@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using red_resume.Data;
-using red_resume.Models.Task;
+using red_resume.Models.Tasks;
 
 namespace red_resume.Controllers
 {
@@ -22,12 +22,7 @@ namespace red_resume.Controllers
         // GET: Tasks
         public async Task<IActionResult> Index()
         {
-<<<<<<< HEAD
-            var dBContext = _context.Task.Include(t => t.UserDepMap);
-            return View(await dBContext.ToListAsync());
-=======
             return View(await _context.Task.ToListAsync());
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         }
 
         // GET: Tasks/Details/5
@@ -38,27 +33,19 @@ namespace red_resume.Controllers
                 return NotFound();
             }
 
-            var task = await _context.Task
-<<<<<<< HEAD
-                .Include(t => t.UserDepMap)
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
+            var tasks = await _context.Task
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (task == null)
+            if (tasks == null)
             {
                 return NotFound();
             }
 
-            return View(task);
+            return View(tasks);
         }
 
         // GET: Tasks/Create
         public IActionResult Create()
         {
-<<<<<<< HEAD
-            ViewData["UserDepMapId"] = new SelectList(_context.UserDepMap, "Id", "Id");
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View();
         }
 
@@ -67,23 +54,15 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,UserDepMapId")] red_resume.Models.Task.Task task)
-=======
-        public async Task<IActionResult> Create([Bind("Id,Name,Description")] red_resume.Models.Task.Task task)
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
+        public async Task<IActionResult> Create([Bind("Id,Name,Description")] Tasks tasks)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(task);
+                _context.Add(tasks);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-<<<<<<< HEAD
-            ViewData["UserDepMapId"] = new SelectList(_context.UserDepMap, "Id", "Name", task.Name);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
-            return View(task);
+            return View(tasks);
         }
 
         // GET: Tasks/Edit/5
@@ -94,16 +73,12 @@ namespace red_resume.Controllers
                 return NotFound();
             }
 
-            var task = await _context.Task.FindAsync(id);
-            if (task == null)
+            var tasks = await _context.Task.FindAsync(id);
+            if (tasks == null)
             {
                 return NotFound();
             }
-<<<<<<< HEAD
-            ViewData["UserDepMapId"] = new SelectList(_context.UserDepMap, "Id", "Id", task.UserDepMapId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
-            return View(task);
+            return View(tasks);
         }
 
         // POST: Tasks/Edit/5
@@ -111,13 +86,9 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,UserDepMapId")] red_resume.Models.Task.Task task)
-=======
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] red_resume.Models.Task.Task task)
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description")] Tasks tasks)
         {
-            if (id != task.Id)
+            if (id != tasks.Id)
             {
                 return NotFound();
             }
@@ -126,12 +97,12 @@ namespace red_resume.Controllers
             {
                 try
                 {
-                    _context.Update(task);
+                    _context.Update(tasks);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TaskExists(task.Id))
+                    if (!TasksExists(tasks.Id))
                     {
                         return NotFound();
                     }
@@ -142,11 +113,7 @@ namespace red_resume.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-<<<<<<< HEAD
-            ViewData["UserDepMapId"] = new SelectList(_context.UserDepMap, "Id", "Id", task.UserDepMapId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
-            return View(task);
+            return View(tasks);
         }
 
         // GET: Tasks/Delete/5
@@ -157,18 +124,14 @@ namespace red_resume.Controllers
                 return NotFound();
             }
 
-            var task = await _context.Task
-<<<<<<< HEAD
-                .Include(t => t.UserDepMap)
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
+            var tasks = await _context.Task
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (task == null)
+            if (tasks == null)
             {
                 return NotFound();
             }
 
-            return View(task);
+            return View(tasks);
         }
 
         // POST: Tasks/Delete/5
@@ -176,13 +139,13 @@ namespace red_resume.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var task = await _context.Task.FindAsync(id);
-            _context.Task.Remove(task);
+            var tasks = await _context.Task.FindAsync(id);
+            _context.Task.Remove(tasks);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TaskExists(int id)
+        private bool TasksExists(int id)
         {
             return _context.Task.Any(e => e.Id == id);
         }

@@ -24,6 +24,14 @@ namespace red_resume.Controllers
         {
             return View(await _context.User.ToListAsync());
         }
+        [AcceptVerbs("Get", "Post")]
+        public IActionResult VerifyLogin(string login)
+        {
+            if (!_context.User.Any(x => x.Login.Equals(login))) {
+                return Json($"Login {login} is already in use.");
+            }
+            return Json(true);
+        }
 
         // GET: Users/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -54,7 +62,7 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] User user)
+        public async Task<IActionResult> Create([Bind("Id,Name,Login,Password")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +94,7 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Login,Password")] User user)
         {
             if (id != user.Id)
             {

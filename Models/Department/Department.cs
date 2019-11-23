@@ -13,15 +13,12 @@ namespace red_resume.Models.Department
         [Display(Name = "Id")]
         public int Id { get; set; }
 
+        [Required]
         [Display(Name = "Name")]
         public string Name { get; set; }
 
-
+        [Required]
         [Display(Name = "Organization")]
-<<<<<<< HEAD
         public Organization.Organization Organization { get; set; }
-=======
-        public List<Organization.Organization> Organization { get; set; }
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
     }
 }

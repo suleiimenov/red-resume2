@@ -16,20 +16,12 @@ namespace red_resume.Models.UserDepMap
         [Display(Name = "Status")]
         public Boolean Status { get; set; }
 
-<<<<<<< HEAD
-        [Display(Name = "UserId")]
-        public int UserId { get; set; }
+        [Required]
+        [Display(Name = "User")]
         public User.User User { get; set; }
 
-        [Display(Name = "DepartmentId")]
-        public int DepartmentId { get; set; }
-        public Department.Department Department { get; set; }
-=======
-        [Display(Name = "User")]
-        public List<User.User> User { get; set; }
-
+        [Required]
         [Display(Name = "Department")]
-        public List<Department.Department> Department { get; set; }
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
+        public Department.Department Department { get; set; }
     }
 }

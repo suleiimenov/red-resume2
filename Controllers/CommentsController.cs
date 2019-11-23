@@ -22,12 +22,7 @@ namespace red_resume.Controllers
         // GET: Comments
         public async Task<IActionResult> Index()
         {
-<<<<<<< HEAD
-            var dBContext = _context.Comment.Include(c => c.Task);
-            return View(await dBContext.ToListAsync());
-=======
             return View(await _context.Comment.ToListAsync());
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         }
 
         // GET: Comments/Details/5
@@ -39,10 +34,6 @@ namespace red_resume.Controllers
             }
 
             var comment = await _context.Comment
-<<<<<<< HEAD
-                .Include(c => c.Task)
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (comment == null)
             {
@@ -55,10 +46,6 @@ namespace red_resume.Controllers
         // GET: Comments/Create
         public IActionResult Create()
         {
-<<<<<<< HEAD
-            ViewData["TaskId"] = new SelectList(_context.Task, "Id", "Id");
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View();
         }
 
@@ -67,11 +54,7 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public async Task<IActionResult> Create([Bind("Id,Name,TaskId")] Comment comment)
-=======
         public async Task<IActionResult> Create([Bind("Id,Name")] Comment comment)
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         {
             if (ModelState.IsValid)
             {
@@ -79,10 +62,6 @@ namespace red_resume.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-<<<<<<< HEAD
-            ViewData["TaskId"] = new SelectList(_context.Task, "Id", "Id", comment.TaskId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(comment);
         }
 
@@ -99,10 +78,6 @@ namespace red_resume.Controllers
             {
                 return NotFound();
             }
-<<<<<<< HEAD
-            ViewData["TaskId"] = new SelectList(_context.Task, "Id", "Id", comment.TaskId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(comment);
         }
 
@@ -111,11 +86,7 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,TaskId")] Comment comment)
-=======
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Comment comment)
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         {
             if (id != comment.Id)
             {
@@ -142,10 +113,6 @@ namespace red_resume.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-<<<<<<< HEAD
-            ViewData["TaskId"] = new SelectList(_context.Task, "Id", "Id", comment.TaskId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(comment);
         }
 
@@ -158,10 +125,6 @@ namespace red_resume.Controllers
             }
 
             var comment = await _context.Comment
-<<<<<<< HEAD
-                .Include(c => c.Task)
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (comment == null)
             {

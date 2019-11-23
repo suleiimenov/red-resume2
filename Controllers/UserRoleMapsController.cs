@@ -22,12 +22,7 @@ namespace red_resume.Controllers
         // GET: UserRoleMaps
         public async Task<IActionResult> Index()
         {
-<<<<<<< HEAD
-            var dBContext = _context.UserRoleMap.Include(u => u.Role).Include(u => u.User);
-            return View(await dBContext.ToListAsync());
-=======
             return View(await _context.UserRoleMap.ToListAsync());
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         }
 
         // GET: UserRoleMaps/Details/5
@@ -39,11 +34,6 @@ namespace red_resume.Controllers
             }
 
             var userRoleMap = await _context.UserRoleMap
-<<<<<<< HEAD
-                .Include(u => u.Role)
-                .Include(u => u.User)
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (userRoleMap == null)
             {
@@ -56,11 +46,6 @@ namespace red_resume.Controllers
         // GET: UserRoleMaps/Create
         public IActionResult Create()
         {
-<<<<<<< HEAD
-            ViewData["roleId"] = new SelectList(_context.Role, "Id", "Name");
-            ViewData["userId"] = new SelectList(_context.User, "Id", "Name");
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View();
         }
 
@@ -69,11 +54,7 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public async Task<IActionResult> Create([Bind("Id,userId,roleId")] UserRoleMap userRoleMap)
-=======
         public async Task<IActionResult> Create([Bind("Id")] UserRoleMap userRoleMap)
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         {
             if (ModelState.IsValid)
             {
@@ -81,11 +62,6 @@ namespace red_resume.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-<<<<<<< HEAD
-            ViewData["roleId"] = new SelectList(_context.Role, "Id", "Name", userRoleMap.roleId);
-            ViewData["userId"] = new SelectList(_context.User, "Id", "Name", userRoleMap.userId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(userRoleMap);
         }
 
@@ -102,11 +78,6 @@ namespace red_resume.Controllers
             {
                 return NotFound();
             }
-<<<<<<< HEAD
-            ViewData["roleId"] = new SelectList(_context.Role, "Id", "Name", userRoleMap.roleId);
-            ViewData["userId"] = new SelectList(_context.User, "Id", "Name", userRoleMap.userId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(userRoleMap);
         }
 
@@ -115,11 +86,7 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public async Task<IActionResult> Edit(int id, [Bind("Id,userId,roleId")] UserRoleMap userRoleMap)
-=======
         public async Task<IActionResult> Edit(int id, [Bind("Id")] UserRoleMap userRoleMap)
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         {
             if (id != userRoleMap.Id)
             {
@@ -146,11 +113,6 @@ namespace red_resume.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-<<<<<<< HEAD
-            ViewData["roleId"] = new SelectList(_context.Role, "Id", "Name", userRoleMap.roleId);
-            ViewData["userId"] = new SelectList(_context.User, "Id", "Name", userRoleMap.userId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(userRoleMap);
         }
 
@@ -163,11 +125,6 @@ namespace red_resume.Controllers
             }
 
             var userRoleMap = await _context.UserRoleMap
-<<<<<<< HEAD
-                .Include(u => u.Role)
-                .Include(u => u.User)
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (userRoleMap == null)
             {

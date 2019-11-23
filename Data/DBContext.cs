@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using red_resume.Models.Task;
+using red_resume.Models.Tasks;
 using red_resume.Models.User;
 using red_resume.Models.Role;
 using red_resume.Models.UserRoleMap;
@@ -20,7 +20,7 @@ public class DBContext : DbContext
     {
     }
 
-        public DbSet<Task> Task { get; set; }
+        public DbSet<Tasks> Task { get; set; }
 
         public DbSet<User> User { get; set; }
 

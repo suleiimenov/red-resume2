@@ -56,29 +56,13 @@ C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Comments\Details.g.cshtml.cs
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Comments\Edit.g.cshtml.cs
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Comments\Index.g.cshtml.cs
-<<<<<<< HEAD
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Create.g.cshtml.cs
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Delete.g.cshtml.cs
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Details.g.cshtml.cs
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Edit.g.cshtml.cs
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Index.g.cshtml.cs
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Tasks\Create.g.cshtml.cs
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Tasks\Delete.g.cshtml.cs
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Tasks\Details.g.cshtml.cs
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Tasks\Edit.g.cshtml.cs
 C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Tasks\Index.g.cshtml.cs
-<<<<<<< HEAD
-=======
-C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Create.g.cshtml.cs
-C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Delete.g.cshtml.cs
-C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Details.g.cshtml.cs
-C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Edit.g.cshtml.cs
-C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\Departments\Index.g.cshtml.cs
-C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\UserDepMaps\Create.g.cshtml.cs
-C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\UserDepMaps\Delete.g.cshtml.cs
-C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\UserDepMaps\Details.g.cshtml.cs
-C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\UserDepMaps\Edit.g.cshtml.cs
-C:\Users\21879\source\repos\red-resume\red-resume\obj\Debug\netcoreapp2.1\Razor\Views\UserDepMaps\Index.g.cshtml.cs
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87

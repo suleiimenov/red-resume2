@@ -38,7 +38,9 @@ namespace redresume.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(nullable: false)
+                    Name = table.Column<string>(nullable: false),
+                    Login = table.Column<string>(nullable: false),
+                    Password = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -51,8 +53,8 @@ namespace redresume.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(nullable: true),
-                    OrganizationId = table.Column<int>(nullable: true)
+                    Name = table.Column<string>(nullable: false),
+                    OrganizationId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -62,7 +64,7 @@ namespace redresume.Migrations
                         column: x => x.OrganizationId,
                         principalTable: "Organization",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -71,21 +73,21 @@ namespace redresume.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    userId = table.Column<int>(nullable: false),
-                    roleId = table.Column<int>(nullable: false)
+                    UserId = table.Column<int>(nullable: false),
+                    RoleId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserRoleMap", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserRoleMap_Role_roleId",
-                        column: x => x.roleId,
+                        name: "FK_UserRoleMap_Role_RoleId",
+                        column: x => x.RoleId,
                         principalTable: "Role",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserRoleMap_User_userId",
-                        column: x => x.userId,
+                        name: "FK_UserRoleMap_User_UserId",
+                        column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -124,7 +126,7 @@ namespace redresume.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     UserDepMapId = table.Column<int>(nullable: false)
                 },
@@ -145,7 +147,7 @@ namespace redresume.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
                     TaskId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -185,14 +187,14 @@ namespace redresume.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserRoleMap_roleId",
+                name: "IX_UserRoleMap_RoleId",
                 table: "UserRoleMap",
-                column: "roleId");
+                column: "RoleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserRoleMap_userId",
+                name: "IX_UserRoleMap_UserId",
                 table: "UserRoleMap",
-                column: "userId");
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

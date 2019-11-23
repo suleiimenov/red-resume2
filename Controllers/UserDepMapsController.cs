@@ -22,12 +22,7 @@ namespace red_resume.Controllers
         // GET: UserDepMaps
         public async Task<IActionResult> Index()
         {
-<<<<<<< HEAD
-            var dBContext = _context.UserDepMap.Include(u => u.Department).Include(u => u.User);
-            return View(await dBContext.ToListAsync());
-=======
             return View(await _context.UserDepMap.ToListAsync());
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         }
 
         // GET: UserDepMaps/Details/5
@@ -39,11 +34,6 @@ namespace red_resume.Controllers
             }
 
             var userDepMap = await _context.UserDepMap
-<<<<<<< HEAD
-                .Include(u => u.Department)
-                .Include(u => u.User)
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (userDepMap == null)
             {
@@ -56,11 +46,6 @@ namespace red_resume.Controllers
         // GET: UserDepMaps/Create
         public IActionResult Create()
         {
-<<<<<<< HEAD
-            ViewData["DepartmentId"] = new SelectList(_context.Department, "Id", "Id");
-            ViewData["UserId"] = new SelectList(_context.User, "Id", "Name");
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View();
         }
 
@@ -69,11 +54,7 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public async Task<IActionResult> Create([Bind("Id,Status,UserId,DepartmentId")] UserDepMap userDepMap)
-=======
         public async Task<IActionResult> Create([Bind("Id,Status")] UserDepMap userDepMap)
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         {
             if (ModelState.IsValid)
             {
@@ -81,11 +62,6 @@ namespace red_resume.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-<<<<<<< HEAD
-            ViewData["DepartmentId"] = new SelectList(_context.Department, "Id", "Id", userDepMap.DepartmentId);
-            ViewData["UserId"] = new SelectList(_context.User, "Id", "Name", userDepMap.UserId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(userDepMap);
         }
 
@@ -102,11 +78,6 @@ namespace red_resume.Controllers
             {
                 return NotFound();
             }
-<<<<<<< HEAD
-            ViewData["DepartmentId"] = new SelectList(_context.Department, "Id", "Id", userDepMap.DepartmentId);
-            ViewData["UserId"] = new SelectList(_context.User, "Id", "Name", userDepMap.UserId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(userDepMap);
         }
 
@@ -115,11 +86,7 @@ namespace red_resume.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Status,UserId,DepartmentId")] UserDepMap userDepMap)
-=======
         public async Task<IActionResult> Edit(int id, [Bind("Id,Status")] UserDepMap userDepMap)
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
         {
             if (id != userDepMap.Id)
             {
@@ -146,11 +113,6 @@ namespace red_resume.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-<<<<<<< HEAD
-            ViewData["DepartmentId"] = new SelectList(_context.Department, "Id", "Id", userDepMap.DepartmentId);
-            ViewData["UserId"] = new SelectList(_context.User, "Id", "Name", userDepMap.UserId);
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
             return View(userDepMap);
         }
 
@@ -163,11 +125,6 @@ namespace red_resume.Controllers
             }
 
             var userDepMap = await _context.UserDepMap
-<<<<<<< HEAD
-                .Include(u => u.Department)
-                .Include(u => u.User)
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (userDepMap == null)
             {

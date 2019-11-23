@@ -1,4 +1,4 @@
-﻿@model red_resume.Models.Task.Task
+﻿@model red_resume.Models.Tasks.Tasks
 
 @{
     ViewData["Title"] = "Edit";
@@ -6,7 +6,7 @@
 
 <h2>Edit</h2>
 
-<h4>Task</h4>
+<h4>Tasks</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -24,14 +24,6 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-<<<<<<< HEAD
-                <label asp-for="UserDepMapId" class="control-label"></label>
-                <select asp-for="UserDepMapId" class="form-control" asp-items="ViewBag.UserDepMapId"></select>
-                <span asp-validation-for="UserDepMapId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-=======
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </form>

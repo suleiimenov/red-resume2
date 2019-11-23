@@ -12,20 +12,12 @@ namespace red_resume.Models.UserRoleMap
         public int Id { get; set; }
 
 
-<<<<<<< HEAD
-        [Display(Name = "UserId")]
-        public int userId { get; set; }
+        [Required]
+        [Display(Name = "User")]
         public User.User User { get; set; }
 
-        [Display(Name = "RoleId")]
-        public int roleId { get; set; }
-        public Role.Role Role { get; set; }
-=======
-        [Display(Name = "User")]
-        public List<User.User> User { get; set; }
-
+        [Required]
         [Display(Name = "Role")]
-        public List<Role.Role> Role { get; set; }
->>>>>>> 245ae373ac5dd32ce8cef7123abd583b794baa87
+        public Role.Role Role { get; set; }
     }
 }
